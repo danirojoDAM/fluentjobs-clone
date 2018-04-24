@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import{HttpClientModule} from '@angular/common/http'
+
 
 
 import { AppComponent } from './app.component';
@@ -8,6 +10,8 @@ import { FormComponent } from './form/form.component';
 import { HeaderComponent } from './header/header.component';
 import { TrabajoInfoComponent } from './trabajo-info/trabajo-info.component';
 import { TrabajoComponent } from './trabajo/trabajo.component';
+import { TrabajosService } from './trabajos.service';
+import { routing } from './app.routing';
 
 
 @NgModule({
@@ -20,9 +24,13 @@ import { TrabajoComponent } from './trabajo/trabajo.component';
     TrabajoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    routing
   ],
-  providers: [],
+  providers: [
+    TrabajosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
